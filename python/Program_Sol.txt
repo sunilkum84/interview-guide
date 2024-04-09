@@ -1,0 +1,67 @@
+Sol 1: 
+def words_longer_than(lnt, sent):
+    lst = sent.split(" ")
+    newlst = []
+    for word in lst:
+        if len(word) > lnt:
+            newlst.append(word)
+    print(newlst)
+
+words_longer_than(3, "The quick brown fox jumps over the lazy dog")
+
+
+Sol 2:
+def common_data(l1, l2):
+    common_numbers = list(set(l1) & set(l2))
+    print(common_numbers)
+
+common_data([1, 2, 3, 4, 5], [5, 6, 7, 8, 9])
+
+
+Sol 3: 
+def remove_elements(lst, data):
+    lst.reverse()
+    for x in lst:
+        data.pop(x)
+        print(data)
+    # print(data)
+
+remove_elements([0,4,5], ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow'])
+
+
+Sol 4:
+def unique_duplicate_items(a):
+    dupl_list = []
+    uniq_list = []
+    for item in a:
+        if item not in dupl_list:
+            dupl_list.append(item)
+        else:
+            uniq_list.append(item)
+    print(dupl_list)
+
+unique_duplicate_items([10, 20, 30, 20, 10, 50, 60, 40, 80, 50, 40])
+
+
+Sol 5:
+import re
+
+def remove_special_characters(words):
+    cleaned_words = []
+    for word in words:
+        # Remove special characters before and after the word
+        cleaned_word = re.sub(r'^\W+|\W+$', '', word)
+        cleaned_words.append(cleaned_word)
+    return cleaned_words
+
+# Example list of words
+word_list = ["hello!", "@world", "#python", "example$ ", "123number"]
+
+# Remove special characters from each word
+cleaned_list = remove_special_characters(word_list)
+
+print("Original list:", word_list)
+print("List after removing special characters:", cleaned_list)
+
+
+Sol 6: 
